@@ -164,6 +164,7 @@ class StudentModel(models.Model):
     lesson      = models.ForeignKey(Lessons, on_delete = models.CASCADE)
     evaluation  = models.IntegerField( )
     
+    
     class Meta:
         verbose_name        = "O'quvchi bahosi"
         verbose_name_plural = "O'quvchilar baholari"
