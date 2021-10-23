@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="{% static 'academy/css/student/student.css' %}">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="{% static 'academy/js/student.js' %}"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h3>O'quvchilar Baholari</h3>
+        <hr>
+        <div class="row">
+            <div class="panel panel-primary filterable">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Users</h3>
+                    <div class="pull-right">
+                        <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Search</button>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr class="filters">
+                            <th><input type="text" class="form-control" placeholder="O'quvchi:" disabled></th>
+                            <th><input type="text" class="form-control" placeholder="Dars nomi:" disabled></th>
+                            <th><input type="text" class="form-control" placeholder="Ball:" disabled></th>
+                            <th><input type="text" class="form-control" placeholder="Darsni boshlagan vaqti:" disabled></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in student %}
+                        <tr>
+                        <td>{{ item.student }}</td>
+                        <td>{{ item.lesson }}</td>
+                        <td>{{ item.evaluation }}</td>
+                        <td>{{ item.date }}</td>
+                    </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
